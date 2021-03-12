@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/atavakoliyext/gazelle-bugreport-2-fork/thing"
+	"github.com/atavakoliyext/gazelle-bugreport-2-dep/thing"
 )
 
 func main() {
-	thing.DoAThing()
+	thing.DoAnotherThing()
 }

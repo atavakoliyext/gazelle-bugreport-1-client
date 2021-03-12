@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix github.com/atavakoliyext/gazelle-bugreport-2-client
+gazelle(name = "gazelle")
+
+go_library(
+    name = "gazelle-bugreport-2-client_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/atavakoliyext/gazelle-bugreport-2-client",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_atavakoliyext_gazelle_bugreport_2_dep//thing"],
+)
+
+go_binary(
+    name = "gazelle-bugreport-2-client",
+    embed = [":gazelle-bugreport-2-client_lib"],
+    visibility = ["//visibility:public"],
+)
